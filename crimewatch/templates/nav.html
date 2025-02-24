@@ -1,0 +1,27 @@
+{% load static %}
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a class='navbar-brand d-flex align-items-center px-4 px-lg-5' href='index.html'>
+        <h4 class="m-0 text-primary"><img width="80" src="{% static 'img/crime.png' %}" alt=""> Crime Watch Uganda</h4>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a class='nav-item nav-link {% if request.path == "/" %}active{% endif %}' href='index.html'>Home</a>
+            <a class='nav-item nav-link {% if request.path == "/about.html" %}active{% endif %}' href='about.html'>About</a>
+            <a class='nav-item nav-link {% if request.path == "/service.html" %}active{% endif %}' href='service.html'>Services</a>
+            <div class="nav-item dropdown">
+                <a class='nav-link dropdown-toggle {% if request.path == "/events.html" or request.path == "/about.html#" %}active{% endif %}' data-bs-toggle='dropdown' href='about.html#'>More</a>
+                <div class="dropdown-menu fade-up m-0">
+                    <a class='dropdown-item {% if request.path == "/events.html" %}active{% endif %}' href='events.html'>Events</a>
+                    <a class='dropdown-item {% if request.path == "/about.html#" %}active{% endif %}' href='about.html#' onclick='alert(\'Coming soon...\');'>News</a>
+                </div>
+            </div>
+            <a class='nav-item nav-link {% if request.path == "/contact.html" %}active{% endif %}' href='contact.html'>Contact</a>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
